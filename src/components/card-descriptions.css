@@ -7,10 +7,10 @@
 .card {
     display: flex;
     flex-direction: column;
-    font-size: medium;
+    font-size: small;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--section-overlay);
+    background-color: var (--section-overlay);
 
     padding: .5rem;
     border-radius: .5rem;
@@ -26,13 +26,18 @@
     margin-bottom: 10px;
 }
 
-.description__card-icon>small {
-    text-transform: capitalize;
+.description__card-icon> small {
+    text-transform: lowercase;
 }
+
 
 @media screen and (max-width: 1024px) {
     .section__descriptions {
 
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.large-icon {
+    font-size: 40px;
 }

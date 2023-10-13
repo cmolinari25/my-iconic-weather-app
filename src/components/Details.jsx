@@ -1,13 +1,13 @@
 import React from "react";
-import "./descriptions.css";
+import "./card-descriptions.css";
 
-import { FaArrowUp, FaArrowDown, FaWind} from "react-icons/fa";
+import { FaArrowUp, FaArrowDown, FaWind, FaThLarge} from "react-icons/fa";
 import { BiHappy } from "react-icons/bi";
 import { MdCompress } from "react-icons/md";
 import { WiHumidity } from "react-icons/wi";
 
 
-const Descriptions = ({ weather, units }) => {
+const Details = ({ weather, units }) => {
   const tempUnit = units === "metric" ? "°C" : "°F";
   const windUnit = units === "metric" ? "m/s" : "m/h";
 
@@ -15,42 +15,42 @@ const Descriptions = ({ weather, units }) => {
   const cards = [
     {
       id: 1,
-      icon: <FaArrowDown />,
+      icon: <FaArrowDown className="large-icon"/>,
       title: "min",
       data: weather.temp_min.toFixed(),
       unit: tempUnit,
     },
     {
       id: 2,
-      icon: <FaArrowUp />,
+      icon: <FaArrowUp className="large-icon"/>,
       title: "max",
       data: weather.temp_max.toFixed(),
       unit: tempUnit,
     },
     {
       id: 3,
-      icon: <BiHappy />,
+      icon: <BiHappy className="large-icon"/>,
       title: "feels like",
       data: weather.feels_like.toFixed(),
       unit: tempUnit,
     },
     {
       id: 4,
-      icon: <MdCompress />,
+      icon: <MdCompress className="large-icon"/>,
       title: "pressure",
       data: weather.pressure,
       unit: "MB",
     },
     {
       id: 5,
-      icon: <WiHumidity />,
+      icon: <WiHumidity className="large-icon"/>,
       title: "humidity",
       data: weather.humidity,
       unit: "%",
     },
     {
       id: 6,
-      icon: <FaWind />,
+      icon: <FaWind className="large-icon"/>,
       title: "wind speed",
       data: weather.speed.toFixed(),
       unit: windUnit,
@@ -66,15 +66,15 @@ const Descriptions = ({ weather, units }) => {
           </div>
           <h2>{`${data} ${unit}`}</h2>
         </div>
-      ))}
+      ))} 
     </div>
   );
 }; 
 
-export default Descriptions;
+export default Details
 
 
-
+// I spent so much time trying to figure out how to convert the weather map API time zone and offsets from the UTC time.
 
 
 

@@ -1,21 +1,22 @@
 import hotBg from "./assets/hot.jpg";
 import coldBg from "./assets/cold.jpg";
-import Descriptions from "./components/Descriptions";
+import Details from "./components/Details";
 import { useEffect, useState } from "react";
-import { getFormattedWeatherData } from "./weatherService";
+import { getFormattedWeatherData } from "./weatherMapData";
 
 function App() {
+  const [bg, setBg] = useState(hotBg);
   const [city, setCity] = useState("Los Angeles");
   const [weather, setWeather] = useState(null);
   const [units, setUnits] = useState("metric");
-  const [bg, setBg] = useState(hotBg);
+ 
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       const data = await getFormattedWeatherData(city, units);
       setWeather(data);
 
-      // dynamic bg
+      // creating a dymamic background is not easy!
       const threshold = units === "metric" ? 10 : 50;
       if (data.temp <= threshold) setBg(coldBg);
       else setBg(hotBg);
@@ -61,6 +62,7 @@ function App() {
                 <img src={weather.iconURL} alt="weatherIcon" />
                 <h3>{weather.description}</h3>
               </div>
+              {/* <button onClick={(e) => handleUnitsClick(e)}>°F</button> */}
               <div className="temperature">
                 <h1>{`${weather.temp.toFixed()} °${
                   units === "metric" ? "C" : "F"
@@ -69,7 +71,7 @@ function App() {
             </div>
 
             {/* bottom*/}
-            <Descriptions weather={weather} units={units} />
+            <Details weather={weather} units={units} />
           </div>
         )}
       </div>

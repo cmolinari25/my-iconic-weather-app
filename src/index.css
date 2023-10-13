@@ -1,6 +1,6 @@
 :root {
-    --section-overlay: rgba(0, 0, 0, 0.4);
-    --background-overlay: rgba(0, 0, 0, 0.2)
+    --section-overlay: rgba(0, 0, 0, 0.6);
+    --background-overlay: rgba(0, 0, 0, 0.3)
 }
 
 * {
@@ -27,10 +27,9 @@
     max-width: 600px;
     margin: auto;
     height: 100%;
-
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-around;
     flex-direction: column;
     padding: 1rem;
 }
@@ -67,21 +66,6 @@
     outline: none;
 }
 
-.section__inputs>button {
-    padding: 10px 40px;
-    border: px solid black;
-    border-radius: 00.4rem;
-    font-size: 20px;
-    font-weight: 500;
-    color: white;
-    background-color: transparent;
-}
-
-.section__inputs>button:hover {
-    cursor: pointer;
-    background-color: black;
-}
-
 .icon {
     display: flex;
     flex-direction: column;
@@ -93,6 +77,21 @@
     font-size: 15px;
     font-weight: 500;
     text-transform: capitalize;
+}
+
+.section__inputs>button {
+    padding: 10px 40px;
+    border: px solid black;
+    border-radius: 00.4rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(215, 97, 7);
+}
+
+.section__inputs>button:hover {
+    cursor: pointer;
+    background-color: blue;
 }
 
 .temperature>h1 {

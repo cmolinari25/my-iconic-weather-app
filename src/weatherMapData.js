@@ -1,3 +1,5 @@
+// getting the open weather map API to sync to the app was not easy... and figuring out how to package the data into a useable format took a long time to set up. was very exciting the first time the data showed up!/
+
 const API_KEY = "774e732497c8b01fe54995f2402eba7b";
 
 const makeIconURL = (iconId) =>
