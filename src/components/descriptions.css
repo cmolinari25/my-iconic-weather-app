@@ -1,18 +1,19 @@
 .section__descriptions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .card {
     display: flex;
     flex-direction: column;
+    font-size: medium;
     align-items: center;
     justify-content: space-between;
     background-color: var(--section-overlay);
 
-    padding: 1rem;
-    border-radius: 0.4rem;
+    padding: .5rem;
+    border-radius: .5rem;
 }
 
 .description__card-icon {
@@ -22,7 +23,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .description__card-icon>small {

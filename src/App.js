@@ -7,7 +7,7 @@ import { getFormattedWeatherData } from "./weatherService";
 function App() {
   const [city, setCity] = useState("Los Angeles");
   const [weather, setWeather] = useState(null);
-  const [units, setUnits] = useState("imperial");
+  const [units, setUnits] = useState("metric");
   const [bg, setBg] = useState(hotBg);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function App() {
       setWeather(data);
 
       // dynamic bg
-      const threshold = units === "metric" ? 20 : 60;
+      const threshold = units === "metric" ? 10 : 50;
       if (data.temp <= threshold) setBg(coldBg);
       else setBg(hotBg);
     };
@@ -62,14 +62,14 @@ function App() {
                 <h3>{weather.description}</h3>
               </div>
               <div className="temperature">
-                <h1>{`${weather.temp.toFixed()} °${ 
+                <h1>{`${weather.temp.toFixed()} °${
                   units === "metric" ? "C" : "F"
                 }`}</h1>
               </div>
             </div>
 
-            {/* bottom description */}
-            <Descriptions weather={weather} units={units} />  
+            {/* bottom*/}
+            <Descriptions weather={weather} units={units} />
           </div>
         )}
       </div>
@@ -77,4 +77,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

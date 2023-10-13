@@ -1,13 +1,16 @@
 import React from "react";
 import "./descriptions.css";
 
-import { FaArrowUp, FaArrowDown, FaWind } from "react-icons/fa";
+import { FaArrowUp, FaArrowDown, FaWind} from "react-icons/fa";
 import { BiHappy } from "react-icons/bi";
-import { MdCompress, MdOutlineWaterDrop } from "react-icons/md";
+import { MdCompress } from "react-icons/md";
+import { WiHumidity } from "react-icons/wi";
+
 
 const Descriptions = ({ weather, units }) => {
   const tempUnit = units === "metric" ? "°C" : "°F";
   const windUnit = units === "metric" ? "m/s" : "m/h";
+
 
   const cards = [
     {
@@ -36,11 +39,11 @@ const Descriptions = ({ weather, units }) => {
       icon: <MdCompress />,
       title: "pressure",
       data: weather.pressure,
-      unit: "hPa",
+      unit: "MB",
     },
     {
       id: 5,
-      icon: <MdOutlineWaterDrop />,
+      icon: <WiHumidity />,
       title: "humidity",
       data: weather.humidity,
       unit: "%",
@@ -69,3 +72,23 @@ const Descriptions = ({ weather, units }) => {
 }; 
 
 export default Descriptions;
+
+
+
+
+
+
+
+// function currentTime(timezoneIn, dtIn) {
+//   let dateTime = new Date(dtIn * 1000 + (timezoneIn * 1000));
+
+//   // Convert into 24-hour format
+//   let hour = (dateTime.getHours() % 12) - 3;
+//   let ampm = hour >= 12 ? 'pm' : 'am';
+
+//   let minutes = dateTime.getMinutes();
+//   let weekday = dateTime.toLocaleString('default', { weekday: 'long' });
+//   let month = dateTime.toLocaleString('default', { month: 'short' });
+//   let date = dateTime.getDate();
+  
+//   return `${hour} : ${minutes} ${ampm} - ${weekday} , ${month} ${date}`; 
